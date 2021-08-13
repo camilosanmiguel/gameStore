@@ -3,7 +3,7 @@ const Product = require("../models/product");
 const User = require("../models/user");
 
 const registerSale = async (req,res) => {
-    if (!req.body.name) {
+    if (!req.body.productName || !req.body.userName || !req.body.price ) {
         return res.status(401).send("Process failed: Imcoplete data");
     }
     let product = await Product.findOne({name:req.body.productName});

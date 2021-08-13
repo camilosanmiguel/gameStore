@@ -28,7 +28,7 @@ const registerUser = async (req,res) => {
         let jwt = user.generateJWT();
         return res.status(200).send({jwt});
     } catch (error) {
-        return res.status(400).send("Failed to register User");
+        return res.status(400).send("Failed to generate jwt");
     }
 };
 
